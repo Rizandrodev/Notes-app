@@ -24,13 +24,14 @@ const Login = () => {
     }
 
     return (
-        <>
-            <Navbar />
-
-            <div className="flex items-center justify-cente mt-28">
-                <div className="w-96 border rounded bg-white px-7 py-10">
-                    <form onSubmit={handleLogin}> {/* Formulário agora envolve os inputs */}
-                        <h4 className="text-2xl mb-2">Login</h4>
+         <>
+                    <Navbar />
+        
+                    <div className="flex items-center justify-center mt-28"> {/* Corrigido justify-cente -> justify-center */}
+                        <div className="w-96 border rounded bg-white px-7 py-10">
+                            <form onSubmit={handleLogin}> {/* Certifique-se de que handleLogin está definido */}
+                                <h4 className="text-2xl mb-2">Login</h4>
+        
                         <input 
                             type="text" placeholder="Email" className="input-box" 
                             value={email}
