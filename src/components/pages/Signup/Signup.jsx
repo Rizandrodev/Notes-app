@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Importando corretamente o Link
 import Navbar from "../../Navbar/navbar";
 import PasswordInput from "../../input/passwordInput"; // Certifique-se de que esse componente está correto
-import { ValidadeEmail } from "../../../utils/helper";
+import { validateEmail } from "../../../utils/helper";
 
 const Signup = () => {
     const [name, setName] = useState("");
@@ -16,7 +16,7 @@ const Signup = () => {
             setError("Please enter your name ")
             return
         }
-        if(!ValidadeEmail(email)){
+        if(!validateEmail(email)){
             setError("Pleasse a valid email adrees")
         }
         if(!password){

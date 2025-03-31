@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../../Navbar/navbar";
 import { Link } from "react-router-dom";
 import PasswordInput from "../../input/passwordInput";
-import { ValidadeEmail } from "../../../utils/helper";
+import { validateEmail } from "../../../utils/helper.js";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ const Login = () => {
 
     async function handleLogin(e) {
         e.preventDefault(); // Corrigido aqui!
-        if (!ValidadeEmail(email)) {
+        if (!validateEmail(email)) {
             setError("Please enter a valid email");
             return;
         }
@@ -47,12 +47,12 @@ const Login = () => {
                         </button>        
                         <p className="text-sm text-center mt-4">
                             Not registered yet? {""}
-                            <Link to='/signup' className="font-medium text-blue-900 underline">
+                                    <Link to='/signup' className="font-medium text-blue-900 underline">
                                 Create an Account
                             </Link>
                         </p>            
                     </form> {/* Fechamento correto do formulário */}
-                </div>
+                </div>      
             </div>
         </>
     );
