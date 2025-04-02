@@ -71,13 +71,18 @@ const Home = () => {
                 className="w-[40%] max-h3/4 bg-white rounded-md mx-auto mt-14 p-5"
                 isOpen={openAddEditModal.isShown}
                 onRequestClose={handleCloseModal}
+                
                 style={{
                     overlay: {
                         backgroundColor: "rgba(0,0,0,0.2)"
                     }
                 }}
             >
-                <AddEditNotesCards />
+                <AddEditNotesCards
+                    noteData={openAddEditModal.data}
+                    type={openAddEditModal.type}
+                     onclose={{isShown:false,type:"add",data:null}}
+               />
             </Modal>
         </>
     );
